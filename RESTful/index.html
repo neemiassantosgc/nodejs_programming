@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>api RESTful</title>
+		<style type="text/css">
+			form {
+				margin: 20px;
+			}
+			input[type="submit"] {
+				padding: 5px;
+				font-size: 1.5em; font-family: monospace;
+				border-radius: 3px;
+				cursor: pointer;
+			}
+			input[type="submit"]:hover {
+				padding: 8px;
+				border: 1px solid black;
+			}
+			input[type="submit"]:active {
+				background-color: white;
+			}
+			.id {
+				width: 40px;
+			}
+			#name, #pass, #profession {
+				width: 200px;
+				margin: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form action="http://localhost:2222/listUsers" method="GET">
+			<input type="submit" value="List Users"/>
+		</form>
+		<form action="http://localhost:2222/addUser" method="POST">
+			Name: <input id="name" type="text" name="name"/><br/>
+			Password: <input id="pass" type="password" name="pass"/><br/>
+			profession: <input id="profession" type="text" name="profession"/><br/>
+			<input type="submit" value="Add User"/>
+		</form>
+		<form action="http://localhost:2222/:id" method="GET">
+			User Id: <input class="id" type="number" name="user" max="10" />
+			<input type="submit" value="Show Detail"/>
+		</form>
+		<form action="http://localhost:2222/deleteUser" method="POST">
+			User Id: <input class="id" type="number" name="del" max="10" />
+			<input type="submit" value="Delete User"/>
+		</form>
+	</body>
+</html>

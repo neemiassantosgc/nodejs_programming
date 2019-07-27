@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Neemias Santos"/>
+		<meta name="viewport" content="width=device-width initial-scale=1.0"/>
+		<title>nodejs web module</title>
+		<style type="text/css">
+			input[type="text"], input[type="file"] {
+				border: 1px solid black;
+				border-radius: 5px;
+				padding: 5px;
+				margin-bottom: 5px;
+			}
+			#post, #file, #cookies {
+				margin-top: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form id="get" action="http://localhost:8080/process_get" method="GET">
+			<h3>GET</h3>
+			First Name: <input type="text" name="first_name"/><br/>
+			Second Name: <input type="text" name="second_name"/><br/>
+			<input type="submit" id="submit" value="Send"/>
+		</form>
+		<form id="post" action="http://localhost:8080/process_post" method="POST">
+			<h3>POST</h3>
+			First Name: <input type="text" name="first_name"/><br/>
+			Second Name: <input type="text" name="second_name"/><br/>
+			<input type="submit" id="submit" value="Send"/>
+		</form>
+		<form id="file" action="http://localhost:8080/process_file" method="POST"
+		enctype="multipart/form-data">
+			<h3>File upload</h3>
+			Enter the file: <input type="file" name="file"/><br/>
+			<input type="submit" name="submit" value="Send"/>
+		</form>
+		<form id="cookies" action="http://localhost:8080/process_cookie" method="GET">
+			<script type="text/javascript">
+				const sendCookie = function() {
+					window.document.cookie = "hoje=quinta";
+					window.document.cookie = "amanha=sexta";
+				}
+			</script>
+			<h3>Send cookies</h3>
+			<input type="submit" name="send_cookie" onclick="sendCookie();"/>
+		</form>
+	</body>
+</html>
