@@ -1,2 +1,4 @@
 *.txt
 *.txt.gz
+node_modules/*
+package-lock.json
